@@ -1,0 +1,22 @@
+<!doctype html>
+<title>Test Template</title>
+<link rel="stylesheet" href="../static/testStyle.css">
+ {% if name %}
+   <h1>Hello {{ name }}!</h1>
+   {% else %}
+     <h1>Hello, World!</h1>
+ {% endif %}
+ <form  method="post" >
+   <fieldset> 
+    <div>
+     <label for="post">Enter something here: </label>
+     <input name="postText" id="postText" required autofocus >
+     <input name="post" id="post" type="submit" value"Submit" >
+    </div>
+
+   </fieldset>
+
+   {% if postText %}
+      <div> <b>{{ postText  }}</b>  </div>
+   {% endif  %} 
+</form>

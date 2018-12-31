@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS note;
+
+CREATE TABLE user (
+	  id INTEGER PRIMARY KEY AUTOINCREMENT,
+	  username TEXT UNIQUE NOT NULL,
+	  password TEXT NOT NULL
+);
+
+CREATE TABLE note (
+	  id INTEGER PRIMARY KEY AUTOINCREMENT,
+	  author_id INTEGER NOT NULL,
+	  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	  title TEXT NOT NULL,
+	  body TEXT NOT NULL,
+	  FOREIGN KEY (author_id) REFERENCES user (id)
+);
+
+INSERT INTO user VALUES (0,"test","test");
+
+INSERT INTO note VALUES (0,0,"2018-12-08 23:30:00.000" ,"Test Note","This is a test...");

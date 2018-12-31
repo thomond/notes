@@ -1,0 +1,32 @@
+<!doctype html>
+<title>Login</title>
+<link rel="stylesheet" href="../static/testStyle.css">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% if do_register %}
+   <form id="form-register"  class="auth" method="post">
+        <label class="auth" for="input-username">Enter a Username: </label>
+        <input id="input-username" name="username" type="text" required autofocus /><br />
+        <label class="auth" for="input-password">Enter Password: </label>
+        <input id="input-password" name="password" type="password" required /><br /><br />
+        <label class="auth" for="input-password">Re-enter Password: </label>
+        <input id="input-password" name="password2" type="password" required /><br /><br />
+        <input id="input-submit" class="auth" type="submit" value="Create" name="c" /><br />
+    </form>
+ {% else %}
+    <form id="form-login"  class="auth" method="post">
+        <label class="auth" for="input-username">Username: </label>
+        <input id="input-username" name="username" type="text" required autofocus /><br />
+        <label class="auth" for="input-password">Password: </label>
+        <input id="input-password" name="password" type="password" required /><br /><br />
+        <input id="input-submit" class="auth" type="submit" value="Login" name="c" /><br />
+        <a href="?c=register">Register</a>
+    </form>
+{% endif %}

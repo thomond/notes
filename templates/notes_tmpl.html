@@ -1,0 +1,62 @@
+<!doctype html>
+<title>Test Template</title>
+<link rel="stylesheet" href="../static/testStyle.css">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="page-main">
+    {% if username %}
+        <div class="page-header">
+            <div id="auth-banner">
+                {{ username  }} logged in | <a href="auth?c=logout">logout</a>  
+            </div>
+        </div>
+        
+        
+    {% endif %}
+
+    <nav class="page-sidebar">
+        <form id="page-actions" method="post">
+            <input class="page-btn" type="submit" value="new" name="c" />
+        </form>
+    </nav>
+    
+    <div class="page-main-content">
+        {% for note in notes %}
+            <form class="note-box" method="post">
+                <input class="page-btn" hidden name="postid" value="{{ note[0] }}"/>
+                <div class="note-head">
+                    <div id="note-title"> 
+                        <textarea name="texttitle" rows="1">{{ note[3] }}</textarea>  
+                    </div>
+                    <div id="note-date">{{ note[2] }}</div>
+                    <div id="note-author"> <b>{{ note[1] }}</b></div>
+                </div>
+                <div class="note-body">
+                    <div id="note-text"> 
+                        <textarea name="textbody">{{ note[4] }}</textarea>
+                    </div>
+                </div>
+                <div class="note-footer">
+                        <div id="note-act-save"> 
+                            <input class="page-btn" type="submit" value="save" name="c" />
+                        </div>
+                        <div id="note-act-del"> 
+                            <input class="page-btn" type="submit" value="delete" name="c" />
+                        </div>
+                        <div id="note-act-cancel"> 
+                            <input class="page-btn" type="submit" value="cancel" name="c" />
+                        </div>
+                </div>
+            </form> 
+            <br /><br /><br />
+        {% endfor  %}
+    </div>
+</div>

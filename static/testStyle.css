@@ -1,0 +1,148 @@
+
+body  {
+    margin: 0px;
+    #background: #4d394b;
+   }
+
+.note-head { display: table-row; column-count: 2; vertical-align: middle; }
+.note-box { display: table; }
+.note-body { display: table-row; }
+   
+div#auth-banner  {
+    line-height: 45px;
+    font-size: 23px;
+    text-align:  right;
+    color: white;
+    padding: inherit;
+}
+
+.page-header:visited {
+    color: #eee;
+}
+
+.page-header:link {
+    color: #eee;
+}
+
+.page-btn {
+    border: dotted 1px;
+    background: white;
+    padding: .3rem;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.page-btn:hover {
+    background: #eee;
+}
+
+
+
+.page-sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 220px;
+    flex-shrink: 0;
+    min-width: 1px;
+    width: 200px;
+    min-height: 95%;
+    top: 5%;
+    #z-index: 201;
+    box-sizing: content-box;
+    visibility: visible;
+    background: #000;
+}
+
+.page-header{
+    position: absolute;
+    display: flex;
+   #padding: 5px;
+    flex-direction: column;
+    flex-basis: 220px;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 5%;
+    top: 0px;
+    box-sizing: content-box;
+    visibility: visible;
+    background: #000;
+}
+
+.page-main-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 90%;
+    
+    left: 10%;
+    min-height: 95%;
+    top: 5%;
+    background: white;
+}
+
+.note-head {
+    background-color: gray;
+}
+
+.note-box {
+  margin: 20px;
+  width: 20%;
+  border: solid 1px black;
+  background-color: yellow;
+}
+
+.note-footer {
+    margin-left: 80%;
+    display: flex;
+}
+
+div#note-title textarea {
+  display: inline-block;
+  vertical-align: inherit;
+  font-size: larger;
+  font: bolder;
+  font-family: inherit;
+  
+}
+
+div#note-text textarea {
+  font-size: large;
+  font-family: inherit;
+  
+}
+
+textarea {
+  background-color: inherit;
+  resize: none;
+  border: 0px; 
+  width: 99%;
+}
+
+div#note-actions  {
+  #display: flex ;
+  align-items: right;
+}
+
+div#note-actions input{
+  font-size: xx-small;
+  padding: 0px;
+  border: 2px;
+  background-color: inherit;
+}
+
+div#note-date {
+  display: table-cell;
+  font-size:  xx-small;
+  text-align: right;
+}
+
+div#note-author{
+  display: none;
+}
+
+
+
+
+
